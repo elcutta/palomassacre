@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://brtolw6rwbll4"]
+
+[ext_resource type="Script" path="res://Pidgeon.gd" id="1_4kriv"]
+
+[node name="Paloma" type="CharacterBody2D"]
+script = ExtResource("1_4kriv")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, -10, 10, 10, -10, 10)
