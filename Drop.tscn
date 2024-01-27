@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://brq0cf81yt4iv"]
+[gd_scene load_steps=2 format=3 uid="uid://brq0cf81yt4iv"]
 
-[node name="Bomba" type="Node2D"]
+[ext_resource type="Script" path="res://Drop.gd" id="1_nhd6l"]
+
+[node name="Drop" type="Node2D"]
+script = ExtResource("1_nhd6l")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(0, -10, 0, -10, 7, -7, 11, -6, 11, -1, 6, 3, 7, 7, 1, 7, -9, 3, -6, -3, -9, -9)
