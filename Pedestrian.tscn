@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7yas4464hc2d"]
+
+[ext_resource type="Script" path="res://Pedestrian.gd" id="2_lrrs0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qtal"]
+
+[node name="Pedestrian" type="CharacterBody2D" groups=["DropCatcher"]]
+script = ExtResource("2_lrrs0")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(1, -15, 7, -8, 34, -8, 45, -4, 34, 5, 8, 4, 3, 12, -1, 14, -4, 11, -10, 4, -34, 3, -38, -4, -31, -8, -7, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8qtal")
+disabled = true
