@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8nfep5sonddn"]
+
+[ext_resource type="Script" path="res://risometro/Risometro.gd" id="1_oafw3"]
+[ext_resource type="Texture2D" uid="uid://b0hqcq7mmqjuu" path="res://risometro/indiferencia.png" id="2_2l1c2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1f5n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q7qe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qpvp"]
+
+[node name="Risometro" type="Control" node_paths=PackedStringArray("progress_bar", "timer")]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -276.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_oafw3")
+loop_delta_time = 2.7
+loop_delta_points = 3.9
+max_points = 143.2
+current_points = 58.5
+points_per_hit = 5.8
+progress_bar = NodePath("HBoxContainer/VBoxContainer/ProgressBar")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -276.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_m1f5n")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_2l1c2")
+stretch_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_m1f5n")
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+show_percentage = false
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0q7qe")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6qpvp")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout" flags=3]
