@@ -1,0 +1,89 @@
+[gd_scene load_steps=16 format=3 uid="uid://i4qb7rp6yoaj"]
+
+[ext_resource type="Texture2D" path="res://Graphics/PedestrianSpecial.png" id="2_da5mn"]
+[ext_resource type="Script" path="res://Pedestrian.gd" id="2_lrrs0"]
+[ext_resource type="AudioStream" path="res://Sound/hit1.mp3" id="3_psysi"]
+[ext_resource type="AudioStream" path="res://Sound/hit2.mp3" id="4_fddca"]
+[ext_resource type="AudioStream" path="res://Sound/rant1.mp3" id="5_dcoe7"]
+[ext_resource type="AudioStream" path="res://Sound/rant2.mp3" id="6_go4vf"]
+[ext_resource type="AudioStream" path="res://Sound/rant3.mp3" id="7_ug6ac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qtal"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x87s3"]
+atlas = ExtResource("2_da5mn")
+region = Rect2(0, 0, 58, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf1x4"]
+atlas = ExtResource("2_da5mn")
+region = Rect2(58, 0, 58, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_056mn"]
+atlas = ExtResource("2_da5mn")
+region = Rect2(116, 0, 58, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31mhg"]
+atlas = ExtResource("2_da5mn")
+region = Rect2(174, 0, 58, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxev8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x87s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf1x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_056mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31mhg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_65r22"]
+streams_count = 2
+stream_0/stream = ExtResource("3_psysi")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_fddca")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4cypy"]
+playback_mode = 1
+streams_count = 3
+stream_0/stream = ExtResource("5_dcoe7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_go4vf")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_ug6ac")
+stream_2/weight = 1.0
+
+[node name="Pedestrian" type="CharacterBody2D" groups=["DropCatcher"]]
+z_index = 200
+script = ExtResource("2_lrrs0")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(1, -15, 7, -8, 34, -8, 45, -4, 34, 5, 8, 4, 3, 12, -1, 14, -4, 11, -10, 4, -34, 3, -38, -4, -31, -8, -7, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8qtal")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mxev8")
+autoplay = "default"
+frame_progress = 0.206674
+
+[node name="SplatPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_65r22")
+bus = &"SFX1"
+
+[node name="RantPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_4cypy")
+bus = &"SFX1"
