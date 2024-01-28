@@ -14,13 +14,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * MOVEMENT_OFFSET
 	if !input_direction.is_zero_approx():
-		$FlapPlayer.play()
+		if !$FlapPlayer.is_playing():
+			$FlapPlayer.play()
+		velocity = input_direction * MOVEMENT_OFFSET
 		global_rotation = input_direction.angle()
+		move_and_slide()
 	else:
 		$FlapPlayer.stop()
-	move_and_slide()
 	
 	if waitToShoot > 0:
 		waitToShoot -= delta

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/PalomassacreBGM.mp3-a6b868e12a4c8413a0827819b
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
