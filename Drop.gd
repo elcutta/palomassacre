@@ -4,7 +4,7 @@ const MAX_HEIGHT = 100
 var height = MAX_HEIGHT
 const FALLING_SPEED = 50
 const SCALE_MAX = 1.1
-const SCALE_MIN = 0.1
+const SCALE_MIN = 0.6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
