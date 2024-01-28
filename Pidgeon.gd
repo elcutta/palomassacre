@@ -15,6 +15,10 @@ func _ready():
 func _physics_process(delta):
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * MOVEMENT_OFFSET
+	if !velocity.is_zero_approx():
+		$FlapPlayer.play()
+	else:
+		$FlapPlayer.stop()
 	move_and_slide()
 	
 	if waitToShoot > 0:

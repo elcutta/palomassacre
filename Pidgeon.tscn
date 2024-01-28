@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://brtolw6rwbll4"]
+[gd_scene load_steps=10 format=3 uid="uid://brtolw6rwbll4"]
 
 [ext_resource type="Script" path="res://Pidgeon.gd" id="1_4kriv"]
 [ext_resource type="Texture2D" uid="uid://de8qokrvjqja3" path="res://Graphics/PidgeonSprite.png" id="2_0mp8c"]
+[ext_resource type="AudioStream" uid="uid://cb50n7yeh8xms" path="res://Sound/flap.mp3" id="3_ft0ag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x45mp"]
 atlas = ExtResource("2_0mp8c")
@@ -56,3 +57,6 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hbfav")
+
+[node name="FlapPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ft0ag")
