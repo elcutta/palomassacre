@@ -41,6 +41,7 @@ func _process(delta):
 		complaining -= delta
 		if complaining < 0:
 			complaining = 0
+			playRant()
 			$AnimatedSprite2D.play()
 	else:
 		velocity = vectorDir * (timesGotIt + 1)
@@ -53,3 +54,5 @@ func gotIt():
 func playSplat():
 	$SplatPlayer.play()
 
+func playRant():
+	$RantPlayer.play()

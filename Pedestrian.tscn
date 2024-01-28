@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7yas4464hc2d"]
+[gd_scene load_steps=16 format=3 uid="uid://c7yas4464hc2d"]
 
 [ext_resource type="Texture2D" uid="uid://b8fbvxa1c7jff" path="res://Graphics/PedestrianSpecial.png" id="2_da5mn"]
 [ext_resource type="Script" path="res://Pedestrian.gd" id="2_lrrs0"]
 [ext_resource type="AudioStream" uid="uid://dpfahfuxwh6ya" path="res://Sound/hit1.mp3" id="3_psysi"]
 [ext_resource type="AudioStream" uid="uid://du38ii3qretms" path="res://Sound/hit2.mp3" id="4_fddca"]
+[ext_resource type="AudioStream" uid="uid://dntdgishp4pnq" path="res://Sound/rant1.mp3" id="5_dcoe7"]
+[ext_resource type="AudioStream" uid="uid://b54oma4h3l7sp" path="res://Sound/rant2.mp3" id="6_go4vf"]
+[ext_resource type="AudioStream" uid="uid://420503x0pgri" path="res://Sound/rant3.mp3" id="7_ug6ac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qtal"]
 
@@ -50,6 +53,16 @@ stream_0/weight = 1.0
 stream_1/stream = ExtResource("4_fddca")
 stream_1/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4cypy"]
+playback_mode = 1
+streams_count = 3
+stream_0/stream = ExtResource("5_dcoe7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_go4vf")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_ug6ac")
+stream_2/weight = 1.0
+
 [node name="Pedestrian" type="CharacterBody2D" groups=["DropCatcher"]]
 z_index = 200
 script = ExtResource("2_lrrs0")
@@ -69,4 +82,8 @@ frame_progress = 0.206674
 
 [node name="SplatPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_65r22")
+bus = &"SFX1"
+
+[node name="RantPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_4cypy")
 bus = &"SFX1"
