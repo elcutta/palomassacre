@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://6rhdcao73f08"]
+
+[ext_resource type="Texture2D" uid="uid://bg34ovb0x1lg5" path="res://resources/win.png" id="1_1te0o"]
+[ext_resource type="Script" path="res://scripts/Jugar.gd" id="1_3j4gp"]
+[ext_resource type="FontFile" uid="uid://cjbgssj2gemap" path="res://resources/VCR_OSD_MONO_1.001.ttf" id="1_iaonv"]
+[ext_resource type="Script" path="res://scripts/Salir.gd" id="2_5ij5u"]
+[ext_resource type="Texture2D" uid="uid://bw5j8xwpcmvlu" path="res://resources/risasb.png" id="5_it8g0"]
+
+[node name="lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -207.0
+offset_top = -158.0
+offset_right = 207.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="fondo" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(214.547, -187)
+scale = Vector2(1.91375, 1.91375)
+texture = ExtResource("1_1te0o")
+
+[node name="Jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iaonv")
+theme_override_font_sizes/font_size = 50
+text = "Volver a jugar"
+script = ExtResource("1_3j4gp")
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iaonv")
+theme_override_font_sizes/font_size = 50
+text = "Salir"
+script = ExtResource("2_5ij5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(585, 150)
+scale = Vector2(2, 2)
+texture = ExtResource("5_it8g0")
+
+[connection signal="pressed" from="VBoxContainer/Jugar" to="VBoxContainer/Jugar" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="VBoxContainer/Salir" method="_on_pressed"]
