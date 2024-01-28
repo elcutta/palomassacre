@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qtal"]
 
 [node name="Pedestrian" type="CharacterBody2D" groups=["DropCatcher"]]
+z_index = 200
 script = ExtResource("2_lrrs0")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
