@@ -37,9 +37,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if complaining > 0:
+		$AnimatedSprite2D.pause()
 		complaining -= delta
 		if complaining < 0:
 			complaining = 0
+			$AnimatedSprite2D.play()
 	else:
 		velocity = vectorDir * (timesGotIt + 1)
 		move_and_slide()
