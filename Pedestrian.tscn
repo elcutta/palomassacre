@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7yas4464hc2d"]
+[gd_scene load_steps=16 format=3 uid="uid://jmybitap600w"]
 
 [ext_resource type="Texture2D" uid="uid://b8fbvxa1c7jff" path="res://Graphics/PedestrianSpecial.png" id="2_da5mn"]
 [ext_resource type="Script" path="res://Pedestrian.gd" id="2_lrrs0"]

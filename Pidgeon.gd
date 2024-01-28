@@ -20,6 +20,26 @@ func _physics_process(delta):
 		velocity = input_direction * MOVEMENT_OFFSET
 		global_rotation = input_direction.angle()
 		move_and_slide()
+		
+		var posX = global_position.x
+		var posY = global_position.y
+		var change = false
+		if posX < 0:
+			posX = 0
+			change = true
+		elif posX > get_viewport_rect().size.x:
+			posX = get_viewport_rect().size.x
+			change = true
+		if posY < 0:
+			posY = 0
+			change = true
+		elif posY > get_viewport_rect().size.y:
+			posY = get_viewport_rect().size.y
+			change = true
+		
+		if change:
+			global_position = Vector2(posX, posY)
+		
 	else:
 		$FlapPlayer.stop()
 	
