@@ -9,15 +9,15 @@ const EXTRA_POINTS = 50
 # When the pidgeon hits a person previously hitted
 const SAME_PEDESTRIAN_MULTIPLIER = 2
 # How much boreness is lowered by points
-const POINTS_BORENESS_RATIO = 0.1
+const POINTS_FUN_RATIO = 0.1
 
 const MAX_DROP_DISTANCE = 10
 
 var random = RandomNumberGenerator.new()
 
 var score = 0
-# How bored are the other pidgeons
-var boreness = 0
+# How happy are the other pidgeons
+var fun = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,7 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	# TODO: Raise boreness
+	# TODO: Decrease fun
 	checkDrop()
 	
 func checkDrop():
@@ -60,7 +60,7 @@ func checkDrop():
 				pedestrian.gotIt()
 				# TODO: Show laughing pidgeons
 				# TODO: Increase score
-				# TODO: Decrease boreness
+				# TODO: Increase fun
 
 func checkDropInPedestrian(drop, pedestrian):
 	var dropPos = drop.global_position

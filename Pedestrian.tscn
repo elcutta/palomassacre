@@ -56,4 +56,4 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mxev8")
 autoplay = "default"
-frame_progress = 0.630715
+frame_progress = 0.704531
