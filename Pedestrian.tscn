@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jmybitap600w"]
+[gd_scene load_steps=16 format=3 uid="uid://i4qb7rp6yoaj"]
 
 [ext_resource type="Texture2D" uid="uid://b8fbvxa1c7jff" path="res://Graphics/PedestrianSpecial.png" id="2_da5mn"]
 [ext_resource type="Script" path="res://Pedestrian.gd" id="2_lrrs0"]
@@ -82,8 +82,6 @@ frame_progress = 0.206674
 
 [node name="SplatPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_65r22")
-bus = &"SFX1"
 
 [node name="RantPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_4cypy")
-bus = &"SFX1"

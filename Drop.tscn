@@ -10,3 +10,4 @@ script = ExtResource("1_nhd6l")
 [node name="DropSprite" type="Sprite2D" parent="."]
 position = Vector2(-1, 2)
 texture = ExtResource("1_plqy5")
+
