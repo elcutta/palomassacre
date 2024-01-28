@@ -33,9 +33,8 @@ grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("1_oafw3")
 loop_delta_time = 1.5
-loop_delta_points = 5.4
+loop_delta_points = 3.9
 max_points = 143.2
-happy_points = 97.6
 current_points = 58.5
 points_per_hit = 5.8
 laugh_time = 1.5
@@ -49,7 +48,6 @@ img_indif = ExtResource("3_qam32")
 img_feliz = ExtResource("4_plua5")
 
 [node name="LoopTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="LaughTimer" type="Timer" parent="."]
 
@@ -142,7 +140,6 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_6qpvp")
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -153,6 +150,6 @@ grow_horizontal = 0
 scale = Vector2(1.08977, 1)
 text = "asdasd"
 
-[connection signal="timeout" from="LoopTimer" to="." method="_on_loop_timer_timeout" flags=3]
-[connection signal="timeout" from="LaughTimer" to="." method="_on_laugh_timer_timeout" flags=3]
+[connection signal="timeout" from="LoopTimer" to="." method="_on_loop_timer_timeout"]
+[connection signal="timeout" from="LaughTimer" to="." method="_on_laugh_timer_timeout"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
