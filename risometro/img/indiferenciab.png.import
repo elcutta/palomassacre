@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0hqcq7mmqjuu"
-path="res://.godot/imported/indiferencia.png-8088309573ce2d5c7acb84c3f65a2341.ctex"
+uid="uid://ddfyf23to28x8"
+path="res://.godot/imported/indiferenciab.png-ce81071a33cfd5d95cf73541ffa52cc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://risometro/indiferencia.png"
-dest_files=["res://.godot/imported/indiferencia.png-8088309573ce2d5c7acb84c3f65a2341.ctex"]
+source_file="res://risometro/img/indiferenciab.png"
+dest_files=["res://.godot/imported/indiferenciab.png-ce81071a33cfd5d95cf73541ffa52cc2.ctex"]
 
 [params]
 
