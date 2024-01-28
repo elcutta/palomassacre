@@ -18,3 +18,4 @@ func _process(delta):
 	$DropSprite.scale = Vector2(newScale, newScale)
 	if (height <= 0):
 		queue_free()
+

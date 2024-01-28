@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7yas4464hc2d"]
+[gd_scene load_steps=12 format=3 uid="uid://c7yas4464hc2d"]
 
 [ext_resource type="Texture2D" uid="uid://b8fbvxa1c7jff" path="res://Graphics/PedestrianSpecial.png" id="2_da5mn"]
 [ext_resource type="Script" path="res://Pedestrian.gd" id="2_lrrs0"]
+[ext_resource type="AudioStream" uid="uid://dpfahfuxwh6ya" path="res://Sound/hit1.mp3" id="3_psysi"]
+[ext_resource type="AudioStream" uid="uid://du38ii3qretms" path="res://Sound/hit2.mp3" id="4_fddca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qtal"]
 
@@ -41,6 +43,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_65r22"]
+streams_count = 2
+stream_0/stream = ExtResource("3_psysi")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_fddca")
+stream_1/weight = 1.0
+
 [node name="Pedestrian" type="CharacterBody2D" groups=["DropCatcher"]]
 z_index = 200
 script = ExtResource("2_lrrs0")
@@ -57,3 +66,7 @@ disabled = true
 sprite_frames = SubResource("SpriteFrames_mxev8")
 autoplay = "default"
 frame_progress = 0.206674
+
+[node name="SplatPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_65r22")
+bus = &"SFX1"

@@ -11,7 +11,7 @@ const SAME_PEDESTRIAN_MULTIPLIER = 2
 # How much boreness is lowered by points
 const POINTS_FUN_RATIO = 0.1
 
-const MAX_DROP_DISTANCE = 10
+const MAX_DROP_DISTANCE = 20
 
 var random = RandomNumberGenerator.new()
 
@@ -56,6 +56,7 @@ func checkDrop():
 		
 		for drop in get_tree().get_nodes_in_group("DropGroup"):
 			if checkDropInPedestrian(drop, pedestrian):
+				pedestrian.playSplat()
 				drop.queue_free()
 				pedestrian.gotIt()
 				# TODO: Show laughing pidgeons

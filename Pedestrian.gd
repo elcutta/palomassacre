@@ -49,3 +49,7 @@ func _process(delta):
 func gotIt():
 	timesGotIt += 1
 	complaining = TIME_COMPLAIN
+	
+func playSplat():
+	$SplatPlayer.play()
+
