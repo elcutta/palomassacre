@@ -11,7 +11,7 @@ const SAME_PEDESTRIAN_MULTIPLIER = 2
 # How much boreness is lowered by points
 const POINTS_BORENESS_RATIO = 0.1
 
-const MAX_DROP_DISTANCE = 7
+const MAX_DROP_DISTANCE = 10
 
 var random = RandomNumberGenerator.new()
 
@@ -66,7 +66,7 @@ func checkDropInPedestrian(drop, pedestrian):
 	var dropPos = drop.global_position
 	var pedestrianPos = pedestrian.global_position
 	var distance = dropPos.distance_to(pedestrianPos)
-	return distance < MAX_DROP_DISTANCE && drop.height <= PEDESTRIAN_HEIGHT
+	return distance <= MAX_DROP_DISTANCE && drop.height <= PEDESTRIAN_HEIGHT
 
 func putPedestrian(pedestrianPos):
 	var pedestrian = PEDESTRIAN_BASE.instantiate()
