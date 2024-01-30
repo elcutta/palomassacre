@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c65efm3p8ixyi"]
+[gd_scene load_steps=5 format=3 uid="uid://c4ljdlsn8mm15"]
 
 [ext_resource type="FontFile" uid="uid://cjbgssj2gemap" path="res://resources/VCR_OSD_MONO_1.001.ttf" id="1_lf4pq"]
 [ext_resource type="Script" path="res://scripts/Jugar.gd" id="1_ranyj"]

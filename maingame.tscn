@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bga3qfymu7p36"]
+[gd_scene load_steps=6 format=3 uid="uid://bga3qfymu7p36"]
 
 [ext_resource type="PackedScene" uid="uid://brtolw6rwbll4" path="res://Pidgeon.tscn" id="1_6rk6m"]
 [ext_resource type="Script" path="res://maingame.gd" id="1_j6dvb"]
 [ext_resource type="Texture2D" uid="uid://bdttuag1rhtvm" path="res://Graphics/Street.jpg" id="2_m7a4r"]
 [ext_resource type="AudioStream" uid="uid://pbuft0iv8pl7" path="res://Music/PalomassacreBGM2.mp3" id="4_pwxod"]
+[ext_resource type="PackedScene" uid="uid://b8nfep5sonddn" path="res://risometro/Risometro.tscn" id="5_0qrr5"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_j6dvb")
@@ -26,3 +27,14 @@ position = Vector2(600, 320)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_pwxod")
 autoplay = true
+
+[node name="Risometro" parent="." instance=ExtResource("5_0qrr5")]
+offset_left = 1174.0
+offset_top = 394.0
+offset_right = 1174.0
+offset_bottom = 670.0
+loop_delta_time = 3.1
+points_per_hit = 10.2
+
+[connection signal="bored_signal" from="Risometro" to="." method="_on_risometro_bored_signal"]
+[connection signal="joyful_signal" from="Risometro" to="." method="_on_risometro_joyful_signal"]

@@ -62,6 +62,7 @@ func checkDrop():
 				# TODO: Show laughing pidgeons
 				# TODO: Increase score
 				# TODO: Increase fun
+				$Risometro.add_points()
 
 func checkDropInPedestrian(drop, pedestrian):
 	var dropPos = drop.global_position
@@ -73,3 +74,11 @@ func putPedestrian(pedestrianPos):
 	var pedestrian = PEDESTRIAN_BASE.instantiate()
 	pedestrian.global_position = pedestrianPos
 	add_child(pedestrian)
+
+
+func _on_risometro_bored_signal():
+	get_tree().change_scene_to_file("res://scenes/lose.tscn")
+
+
+func _on_risometro_joyful_signal():
+	get_tree().change_scene_to_file("res://scenes/win.tscn")
