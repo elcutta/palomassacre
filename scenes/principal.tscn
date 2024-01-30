@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://ctsink7wa77he"]
-=======
-[gd_scene load_steps=3 format=3 uid="uid://cfdpa10oelu5p"]
->>>>>>> 12a5476af92546598621c9df4d8e86988c2b5302
 
 [ext_resource type="Script" path="res://scripts/Gana.gd" id="1_otqya"]
 [ext_resource type="Script" path="res://scripts/Pierde.gd" id="2_q3y1r"]
